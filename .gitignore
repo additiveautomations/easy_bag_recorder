@@ -1,0 +1,27 @@
+cmake-build-debug
+bin/
+lib/
+
+# Ignore generated docs
+*.dox
+*.wikidoc
+
+.idea
+
+srv/_*.py
+*.pcd
+*.pyc
+qtcreator-*
+*.user
+
+/planning/cfg
+/planning/docs
+/planning/src
+
+*~
+
+# Emacs
+.#*
+
+# Catkin custom files
+CATKIN_IGNORE

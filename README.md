@@ -4,7 +4,7 @@ Simple ROS action server for recording ROS bags in serial.
 
 Loosely based on the work of Esteve Fernandez on https://github.com/osrf/nodelet_rosbag
 
-The limited scope of this module is to enable a single recording running at once. To achieve this the concept of a ROS action has been slightly abused. Preempting (or cancelling) a goal stops the recording.
+The limited scope of this module is to enable a single recording running at any one time. To achieve this the concept of a ROS action has been slightly abused. Preempting (or cancelling) a goal stops the recording.
 
 ## Synopsis
 

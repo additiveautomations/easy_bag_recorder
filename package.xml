@@ -21,4 +21,5 @@
   <run_depend>actionlib</run_depend>
   <run_depend>actionlib_msgs</run_depend>
   <run_depend>message_generation</run_depend>
+  <run_depend>rospy</run_depend>
 </package>

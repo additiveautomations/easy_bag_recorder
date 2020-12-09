@@ -9,6 +9,8 @@ set(CMAKE_LINK_WHAT_YOU_USE TRUE)
 
 find_package(catkin REQUIRED COMPONENTS roscpp rosbag std_msgs actionlib actionlib_msgs topic_tools)
 
+catkin_python_setup()
+
 add_action_files(
   DIRECTORY action
   FILES
@@ -24,6 +26,7 @@ catkin_package(
   INCLUDE_DIRS include
   CATKIN_DEPENDS roscpp rosbag actionlib actionlib_msgs topic_tools
 )
+
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 

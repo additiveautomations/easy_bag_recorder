@@ -19,16 +19,17 @@ Start recording from Python:
 
 ```python
 import rospy
-import actionlib
-from rosbag import Bag
-from easy_bag_recorder.msg import RecordAction, RecordActionGoal, RecordGoal
+from easy_bag_recorder import EasyBagRecorder
 
 rospy.init_node("example")
-client = actionlib.SimpleActionClient("/record", RecordAction)
-client.wait_for_server()
+recorder = EasyBagRecorder()
+recorder.record(["/robot/joint_states"])
 
-# starts recording the provided topics
-client.send_goal(RecordGoal(topics=["/hello"]))
+# ...  do something with the robot
+robot.raise_arm()
+
+bag_path = recorder.stop()
+bag = recorder.get_bag()  # rosbag.Bag
 ```
 
 Server output:
@@ -39,13 +40,17 @@ Server output:
 [ INFO] [1607431127.247674839]: Stopping recording
 ```
 
-Stop recording (Python):
-
+Using a context manager:
 ```python
-# stops recording
-client.cancel_goal();
+import rospy
+from easy_bag_recorder import EasyBagRecorder
 
-# Path on file system of the bag
-bag_path = client.get_goal_status_text();
-my_ros_bag = Bag(bag_path)
+rospy.init_node("example")
+recorder = EasyBagRecorder()
+
+with recorder.record_session(["/robot/joint_states"])
+    # ...  do something with the robot
+    robot.raise_arm()
+
+bag = recorder.get_bag()
 ```

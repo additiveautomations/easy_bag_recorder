@@ -8,6 +8,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>message_generation</build_depend>
   <build_depend>clang-tidy</build_depend>
+  <build_depend>cppcheck</build_depend>
   <depend>std_msgs</depend>
   <depend>rosbag</depend>
   <depend>roscpp</depend>

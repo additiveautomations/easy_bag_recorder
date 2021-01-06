@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>easy_bag_recorder</name>
   <version>0.0.1</version>
   <description>Easy bag recorder, simple action server for recording rosbags. Based on nodelet_rosbag by Esteve Fernandez https://github.com/osrf/nodelet_rosbag</description>
@@ -15,5 +15,5 @@
   <depend>topic_tools</depend>
   <depend>actionlib</depend>
   <depend>actionlib_msgs</depend>
-  <run_depend>rospy</run_depend>
+  <exec_depend>rospy</exec_depend>
 </package>

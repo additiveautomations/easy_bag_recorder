@@ -12,7 +12,6 @@
   <depend>std_msgs</depend>
   <depend>rosbag</depend>
   <depend>roscpp</depend>
-  <depend>boost</depend>
   <depend>topic_tools</depend>
   <depend>actionlib</depend>
   <depend>actionlib_msgs</depend>

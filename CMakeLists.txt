@@ -31,6 +31,7 @@ catkin_package(
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(${PROJECT_NAME} src/${PROJECT_NAME}.cpp)
+
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME}
@@ -38,3 +39,7 @@ install(TARGETS ${PROJECT_NAME}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
+add_dependencies(
+  ${PROJECT_NAME}
+  ${easy_bag_recorder_EXPORTED_TARGETS}
+)
